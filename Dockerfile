@@ -17,5 +17,6 @@ RUN cat /home/ec2-user/.ssh/id_rsa.pub >> /home/ec2-user/.ssh/authorized_keys
 
 RUN useradd ec2-user && \
       echo "ec2-user ALL=NOPASSWD: ALL" >> /etc/sudoers
+RUN chown ec2-user:ec2-user /home/ec2-user
 
 CMD /sbin/init
